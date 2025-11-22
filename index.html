@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Paige Park</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-  <style>
-    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-    .highlight { font-weight: bold; color: #2c3e50; }
-    .section-title { margin-top: 40px; margin-bottom: 10px; font-size: 24px; font-weight: bold; }
-    .project-desc { margin-bottom: 15px; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <!-- Column 1: Profile Image & Intro (Sticky) -->
+    <aside class="profile-section animate-on-load">
+      <img class="profile-img" src="photo.jpg" alt="Paige Park">
+      <div style="margin-top: 2rem;">
+        <h1 class="name-title">
+          <span id="typing-text"></span><span class="cursor"></span>
+        </h1>
+        <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-slate);">
+          Department of Demography<br>
+          University of California, Berkeley
+        </p>
+      </div>
+    </aside>
+
+    <!-- Column 2: Main Content (Scrollable) -->
+    <main class="animate-on-load delay-1">
+      <p class="lead">
+        I am a PhD candidate in Demography at the University of California, Berkeley, where I also earned an MA in
+        Statistics.
+      </p>
+      <p>
+        My research career began with sociological analyses of community change, rurality, and immigrant outcomes in the
+        US, leading to solo and co‑authored articles in journals such as <em>Population Research and Policy Review</em>
+        and <em>Sustainability</em>. I’ve examined how gender, immigration status, and policy context shape life
+        outcomes, and more recently, I co‑authored work on employer responses to paid‑leave policies during COVID‑19.
+      </p>
+      <p>
+        My dissertation work lies at the intersection of demography, machine learning, and artificial intelligence. I am
+        particularly interested in how deep learning can improve demographic forecasting, and how natural language
+        processing can be used to extract demographic insights from large text corpora. My current projects include
+        developing deep learning models and explainability techniques for mortality forecasting and using advanced NLP
+        to analyze the content of Demographic and Health Surveys (DHS) research articles over time.
+      </p>
+
+      <!-- Rothko-style Block for News -->
+      <div class="news-container animate-on-load delay-2" style="margin-top: 4rem;">
+        <h2>Recent News</h2>
+        <ul class="news-list">
+          <li class="reveal-on-scroll" style="transition-delay: 100ms;"><strong>Oct 2025:</strong> Invited talk at the
+            Max Planck Institute for Demographic Research on my deep
+            learning forecasting work.</li>
+          <li class="reveal-on-scroll" style="transition-delay: 200ms;"><strong>Oct 2025:</strong> Invited talk a
+            mortality expert's meeting prior to the Human Mortality Database
+            symposium on old-age mortality smoothing.</li>
+          <li class="reveal-on-scroll" style="transition-delay: 300ms;"><strong>Oct 2025:</strong> Presented my deep
+            learning forecasting work at the HMD Symposium</li>
+          <li class="reveal-on-scroll" style="transition-delay: 400ms;"><strong>Aug 2025:</strong> Became a Data Science
+            and AI Fellow at Berkeley's D-Lab</li>
+          <li class="reveal-on-scroll" style="transition-delay: 500ms;"><strong>May 2025:</strong> Presented in a
+            machine learning for demography session at the Population
+            Association of America Conference</li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- Column 3: Sidebar Links (Color Block) -->
+    <div class="sidebar">
+      <div class="sidebar-block">
+        <h3>Links</h3>
+        <div class="links">
+          <a href="cv.pdf" target="_blank">CV</a>
+          <a href="https://scholar.google.com/citations?user=WuSV_DAAAAAJ&hl=en&oi=ao">Google Scholar</a>
+          <a href="https://github.com/paigenpark">GitHub</a>
+          <a href="https://www.linkedin.com/in/paige-park-demography/">LinkedIn</a>
+        </div>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.pdf" target="_blank">CV</a></li> 
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-    <!-- Entries Column -->
-    <div class="col-md-8" style="height: 100vh; overflow: auto;">
-      <img class="img-responsive" src="photo.jpg" alt="" style="width: 300px; height: auto;"><br>      
-      <div style="margin-top:3%; text-align:justify;">
-  <p class="lead">
-    I am a PhD candidate in Demography at the University of California, Berkeley, where I also earned an MA in Statistics.
-  </p>
-  <p>
-    My research career began with sociological analyses of community change, rurality, and immigrant outcomes in the US, leading to solo and co‑authored articles in journals such as <em>Population Research and Policy Review</em> and <em>Sustainability</em>. I’ve examined how gender, immigration status, and policy context shape life outcomes, and more recently, I co‑authored work on employer responses to paid‑leave policies during COVID‑19.
-  </p>
-  <p>
-    My dissertation work lies at the intersection of demography, machine learning, and artificial intelligence. I am particularly interested in how deep learning can improve demographic forecasting, and how natural language processing can be used to extract demographic insights from large text corpora. My current projects include developing deep learning models and explainability techniques for mortality forecasting and using advanced NLP to analyze the content of Demographic and Health Surveys (DHS) research articles over time.
-  </p>
   </div>
 
-  <div style="margin-top: 20px; margin-bottom: 50px;">
-    <div class="section-title">Recent News</div>
-    <ul class="list-unstyled">
-      <li><strong>Oct 2025:</strong> Invited talk at the Max Planck Institute for Demographic Research on my deep learning forecasting work.</li>
-      <li><strong>Oct 2025:</strong> Invited talk a mortality expert's meeting prior to the Human Mortality Database symposium on old-age mortality smoothing.</li>
-      <li><strong>Oct 2025:</strong> Presented my deep learning forecasting work at the HMD Symposium</li>
-      <li><strong>Aug 2025:</strong> Became a Data Science and AI Fellow at Berkeley's D-Lab</li>
-      <li><strong>May 2025:</strong> Presented in a machine learning for demography session at the Population Association of America Conference</li>
-    </ul>
-  </div>
- </div>
+  <a style="color: var(--accent-slate); font-size:0.8em; position: fixed; bottom: 20px; right: 20px; opacity: 0.6; font-family: var(--font-mono);"
+    href="https://github.com/mavroudisv/plain-academic">Plain Academic</a>
 
-
-    <!-- Contact Info on the Sidebar -->
-    <div class="col-md-4">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Paige Park</b></div><br>
-      <p>Department of Demography<br>
-      University of California, Berkeley</p>
-
-      <div class="section-title">Links</div>
-      <dd><a href="https://scholar.google.com/citations?user=WuSV_DAAAAAJ&hl=en&oi=ao">Google Scholar</a></dd> 
-      <dd><a href="https://github.com/paigenpark">GitHub</a></dd>
-      <dd><a href="https://www.linkedin.com/in/paige-park-demography/">LinkedIn</a></dd>
-    </div>
-  </div>
-</div>
-
-<a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
-
+  <script src="script.js"></script>
 </body>
+
 </html>
