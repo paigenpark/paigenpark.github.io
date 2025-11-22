@@ -253,7 +253,7 @@ p {
 
 .sidebar-block:hover {
     transform: translateY(-5px);
-    box-shadow: 15px 15px 0px var(--color-brown);
+    box-shadow: 15px 15px 0px var(--color-tan);
 }
 
 .sidebar-block h3 {
